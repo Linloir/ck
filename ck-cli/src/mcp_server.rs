@@ -1091,6 +1091,7 @@ impl CkMcpServer {
             rerank: request.rerank.unwrap_or(false),
             rerank_model: request.rerank_model.clone(),
             embedding_model: None,
+            skip_index_update: false,
         };
 
         // Note: Embedders are created fresh for each request by ck-engine
@@ -1298,6 +1299,7 @@ impl CkMcpServer {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         };
 
         let started = Instant::now();
@@ -1433,6 +1435,7 @@ impl CkMcpServer {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         };
 
         // Perform the search (no indexing needed for regex)
@@ -1568,6 +1571,7 @@ impl CkMcpServer {
             rerank: request.rerank.unwrap_or(false),
             rerank_model: request.rerank_model.clone(),
             embedding_model: None,
+            skip_index_update: false,
         };
 
         // Perform the search (suppress progress callbacks for MCP)
@@ -1823,6 +1827,7 @@ impl CkMcpServer {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         };
 
         // Perform reindexing

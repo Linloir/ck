@@ -58,6 +58,7 @@ impl McpContext {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         };
 
         Ok(Self {

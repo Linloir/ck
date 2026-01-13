@@ -580,6 +580,7 @@ impl TuiApp {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         };
 
         let progress_tx = self.progress_tx.clone();
