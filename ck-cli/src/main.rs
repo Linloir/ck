@@ -229,6 +229,12 @@ struct Cli {
     reindex: bool,
 
     #[arg(
+        long = "local",
+        help = "Skip automatic index update check for semantic search (use existing index as-is)"
+    )]
+    local: bool,
+
+    #[arg(
         long = "exclude",
         value_name = "PATTERN",
         help = "Exclude directories matching pattern (can be used multiple times)"
@@ -1470,6 +1476,7 @@ fn build_options(cli: &Cli, reindex: bool, _repo_root: Option<&Path>) -> SearchO
         rerank: cli.rerank,
         rerank_model: cli.rerank_model.clone(),
         embedding_model: cli.model.clone(),
+        skip_index_update: cli.local,
     }
 }
 

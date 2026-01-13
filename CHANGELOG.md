@@ -14,6 +14,11 @@ All notable changes to this project will be documented in this file.
 - **Node.js integration**: Documentation site uses Node.js 18+, pnpm 10+, and VitePress 1.6+ for modern documentation experience
 - **GitHub integration**: Edit links and social links configured for easy contribution
 
+## [0.7.2] - 2026-01-13
+
+### Added
+- **Skip index update**: Added `--skip-index-update` flag to skip index update when searching, useful for large repositories where index update is slow or not needed
+
 ## [0.7.1] - 2025-11-05
 
 ### Fixed

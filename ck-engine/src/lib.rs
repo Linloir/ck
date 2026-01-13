@@ -363,8 +363,8 @@ pub async fn search_enhanced_with_indexing_progress(
         .into());
     }
 
-    // Auto-update index if needed (unless it's regex-only mode)
-    if !matches!(options.mode, SearchMode::Regex) {
+    // Auto-update index if needed (unless it's regex-only mode or skip_index_update is set)
+    if !matches!(options.mode, SearchMode::Regex) && !options.skip_index_update {
         let need_embeddings = matches!(options.mode, SearchMode::Semantic | SearchMode::Hybrid);
         let file_options = ck_core::FileCollectionOptions::from(options);
         ensure_index_updated_with_progress(

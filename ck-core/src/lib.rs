@@ -342,6 +342,8 @@ pub struct SearchOptions {
     pub rerank: bool,
     pub rerank_model: Option<String>,
     pub embedding_model: Option<String>,
+    /// Skip automatic index update check before search (use existing index as-is)
+    pub skip_index_update: bool,
 }
 
 impl JsonlSearchResult {
@@ -399,6 +401,7 @@ impl Default for SearchOptions {
             rerank: false,
             rerank_model: None,
             embedding_model: None,
+            skip_index_update: false,
         }
     }
 }
